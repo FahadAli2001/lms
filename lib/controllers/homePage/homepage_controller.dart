@@ -1,14 +1,16 @@
+import 'dart:math';
+
 import 'package:flutter/material.dart';
 
 class HomePageController with ChangeNotifier {
-  bool underlined = false;
+  int index = 0;
 
-  void handleLoginContainerState() {
-    if (underlined == true) {
-      underlined = false;
+  handleLoginContainerState(int val) {
+    if (index == val) {
+      index = 0;
       notifyListeners();
     } else {
-      underlined = true;
+      index = val;
       notifyListeners();
     }
   }

@@ -1,9 +1,12 @@
+import 'dart:developer';
+
 import 'package:flutter/material.dart';
+import 'package:lms/commans/home/custom_login_box.dart';
 import 'package:lms/consts/app_paddings.dart';
 import 'package:lms/controllers/homePage/homepage_controller.dart';
 import 'package:provider/provider.dart';
 
-import '../../commans/home/custom_login_box.dart';
+import '../../commans/home/custom_login_text.dart';
 import '../../consts/app_images.dart';
 
 class HomePage extends StatefulWidget {
@@ -51,35 +54,42 @@ class _HomePageState extends State<HomePage> {
                                   color: Colors.blueGrey,
                                   fontSize: height * 0.04),
                             ),
-                            Padding(
-                              padding: const EdgeInsets.only(top: 50),
-                              child: Align(
-                                alignment: Alignment.centerLeft,
-                                child: GestureDetector(
-                                  onTap: () {
-                                    value.handleLoginContainerState();
-                                  },
-                                  child: Text(
-                                    'LOGIN AS STUDENT',
-                                    style: TextStyle(
-                                      fontSize: height * 0.03,
-                                      color: Colors.grey,
-                                      fontWeight: FontWeight.bold,
-                                      decoration: value.underlined == true
-                                          ? TextDecoration.underline
-                                          : TextDecoration.none,
-                                      decorationColor: Colors.grey,
-                                      decorationThickness: 2.0,
-                                    ),
-                                  ),
-                                ),
-                              ),
+                            CustomLoginText(
+                              heading: 'Login as student',
+                              index: value.index,
+                              ontap: () {
+                                value.handleLoginContainerState(1);
+                              },
+                              textIndex: 1,
                             ),
-                            (value.underlined == true)
+                            (value.index == 1)
                                 ? const CustomLoginBox(
-                                    butnText: 'Login as student',
-                                  )
-                                : Container()
+                                    butnText: 'Login as student')
+                                : Container(),
+                            CustomLoginText(
+                              heading: 'Login as Faculty',
+                              index: value.index,
+                              ontap: () {
+                                value.handleLoginContainerState(2);
+                              },
+                              textIndex: 2,
+                            ),
+                            (value.index == 2)
+                                ? const CustomLoginBox(
+                                    butnText: 'Login as faculty')
+                                : Container(),
+                            CustomLoginText(
+                              heading: 'Login as Parents',
+                              index: value.index,
+                              ontap: () {
+                                value.handleLoginContainerState(3);
+                              },
+                              textIndex: 3,
+                            ),
+                            (value.index == 3)
+                                ? const CustomLoginBox(
+                                    butnText: 'Login as parents')
+                                : Container(),
                           ],
                         ),
                       ),
