@@ -1,4 +1,6 @@
 import 'package:flutter/material.dart';
+import 'package:lms/controllers/homePage/homepage_controller.dart';
+import 'package:provider/provider.dart';
 
 import 'views/homepage/homepage.dart';
 
@@ -12,13 +14,16 @@ class MyApp extends StatelessWidget {
   // This widget is the root of your application.
   @override
   Widget build(BuildContext context) {
-    return MaterialApp(
-      debugShowCheckedModeBanner: false,
-      title: 'Flutter Demo',
-      theme: ThemeData(
-        primarySwatch: Colors.blue,
+    return MultiProvider(
+      providers: [ChangeNotifierProvider(create: (_) => HomePageController())],
+      child: MaterialApp(
+        debugShowCheckedModeBanner: false,
+        title: 'Lms',
+        theme: ThemeData(
+          primarySwatch: Colors.blueGrey,
+        ),
+        home: const HomePage(),
       ),
-      home: const HomePage(),
     );
   }
 }
