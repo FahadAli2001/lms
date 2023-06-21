@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:lms/controllers/dashboard/dashboard_controller.dart';
 import 'package:lms/controllers/homePage/homepage_controller.dart';
 import 'package:provider/provider.dart';
 
@@ -15,7 +16,10 @@ class MyApp extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return MultiProvider(
-      providers: [ChangeNotifierProvider(create: (_) => HomePageController())],
+      providers: [
+        ChangeNotifierProvider(create: (_) => HomePageController()),
+        ChangeNotifierProvider(create: (_) => DashboardController())
+      ],
       child: MaterialApp(
         debugShowCheckedModeBanner: false,
         title: 'Lms',

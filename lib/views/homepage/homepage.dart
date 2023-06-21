@@ -4,6 +4,7 @@ import 'package:flutter/material.dart';
 import 'package:lms/commans/home/custom_login_box.dart';
 import 'package:lms/consts/app_paddings.dart';
 import 'package:lms/controllers/homePage/homepage_controller.dart';
+import 'package:lms/views/dashboard/dashboard.dart';
 import 'package:provider/provider.dart';
 
 import '../../commans/home/custom_login_text.dart';
@@ -39,7 +40,7 @@ class _HomePageState extends State<HomePage> {
                     left: 100,
                     child: Container(
                       width: width * 0.35,
-                      height: height * 0.7,
+                      //height: height * 0.7,
                       color: Colors.white,
                       child: Padding(
                         padding: const EdgeInsets.symmetric(
@@ -63,7 +64,14 @@ class _HomePageState extends State<HomePage> {
                               textIndex: 1,
                             ),
                             (value.index == 1)
-                                ? const CustomLoginBox(
+                                ? CustomLoginBox(
+                                    ontap: () {
+                                      Navigator.push(
+                                          context,
+                                          MaterialPageRoute(
+                                              builder: (context) =>
+                                                  const Dashboard()));
+                                    },
                                     butnText: 'Login as student')
                                 : Container(),
                             CustomLoginText(
@@ -75,8 +83,8 @@ class _HomePageState extends State<HomePage> {
                               textIndex: 2,
                             ),
                             (value.index == 2)
-                                ? const CustomLoginBox(
-                                    butnText: 'Login as faculty')
+                                ? CustomLoginBox(
+                                    ontap: () {}, butnText: 'Login as faculty')
                                 : Container(),
                             CustomLoginText(
                               heading: 'Login as Parents',
@@ -87,8 +95,8 @@ class _HomePageState extends State<HomePage> {
                               textIndex: 3,
                             ),
                             (value.index == 3)
-                                ? const CustomLoginBox(
-                                    butnText: 'Login as parents')
+                                ? CustomLoginBox(
+                                    ontap: () {}, butnText: 'Login as parents')
                                 : Container(),
                           ],
                         ),

@@ -4,7 +4,9 @@ import 'package:lms/commans/custom_textfiled.dart';
 
 class CustomLoginBox extends StatelessWidget {
   final String butnText;
-  const CustomLoginBox({super.key, required this.butnText});
+  final VoidCallback ontap;
+  const CustomLoginBox(
+      {super.key, required this.butnText, required this.ontap});
 
   @override
   Widget build(BuildContext context) {
@@ -44,11 +46,11 @@ class CustomLoginBox extends StatelessWidget {
               padding: const EdgeInsets.all(0),
               child: CupertinoButton(
                   color: Colors.blueGrey,
+                  onPressed: ontap,
                   child: Text(
                     butnText,
                     style: const TextStyle(color: Colors.white),
-                  ),
-                  onPressed: () {}),
+                  )),
             )
           ],
         ),
