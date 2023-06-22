@@ -53,19 +53,19 @@ class CustomTableView extends StatelessWidget {
                 ),
               ],
             ),
-            TableRow(
+            const TableRow(
               children: [
                 TableCell(
-                  child: Center(child: Text('Row 2, Column 1')),
+                  child: Center(child: Text('BS')),
                 ),
                 TableCell(
-                  child: Center(child: Text('Row 2, Column 2')),
+                  child: Text('Bachelor of science (computer science)'),
                 ),
                 TableCell(
-                  child: Center(child: Text('Row 2, Column 3')),
+                  child: Center(child: Text('C')),
                 ),
                 TableCell(
-                  child: Center(child: Text('Row 2, Column 4')),
+                  child: Center(child: Text('ACTIVE')),
                 ),
               ],
             ),
