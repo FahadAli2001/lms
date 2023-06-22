@@ -4,6 +4,8 @@ import 'package:lms/commans/dashboard/custom_menu_column.dart';
 import 'package:lms/controllers/dashboard/dashboard_controller.dart';
 import 'package:provider/provider.dart';
 
+import '../../commans/dashboard/custom_table_view.dart';
+
 class Dashboard extends StatefulWidget {
   const Dashboard({super.key});
 
@@ -109,6 +111,102 @@ class _DashboardState extends State<Dashboard> {
                             color: Colors.white,
                             width: size.width,
                             height: size.height,
+                            child: Padding(
+                              padding: EdgeInsets.symmetric(
+                                  horizontal: appbarIconsPadding,
+                                  vertical: appbarIconsPadding),
+                              child: Column(
+                                mainAxisAlignment: MainAxisAlignment.start,
+                                children: [
+                                  Text(
+                                    'Student Portal',
+                                    style: TextStyle(
+                                        fontWeight: FontWeight.bold,
+                                        fontSize: size.height * 0.03,
+                                        color: Colors.blueGrey),
+                                  ),
+                                  Row(
+                                    children: [
+                                      Column(
+                                        crossAxisAlignment:
+                                            CrossAxisAlignment.start,
+                                        children: [
+                                          Text(
+                                            'Student No : 12488',
+                                            style: TextStyle(
+                                                fontSize: size.height * 0.02,
+                                                color: Colors.black),
+                                          ),
+                                          Text(
+                                            'Student Name : Fahad Ali',
+                                            style: TextStyle(
+                                                fontSize: size.height * 0.02,
+                                                color: Colors.black),
+                                          ),
+                                          Text(
+                                            'Father Name : Rahat Ali',
+                                            style: TextStyle(
+                                                fontSize: size.height * 0.02,
+                                                color: Colors.black),
+                                          ),
+                                          TextButton(
+                                              onPressed: () {},
+                                              child: Text(
+                                                'Update Perssonal Information',
+                                                style: TextStyle(
+                                                    color: Colors.blueGrey,
+                                                    fontWeight: FontWeight.bold,
+                                                    fontSize:
+                                                        size.height * 0.02),
+                                              ))
+                                        ],
+                                      ),
+                                      Padding(
+                                        padding:
+                                            const EdgeInsets.only(left: 200),
+                                        child: Column(
+                                          crossAxisAlignment:
+                                              CrossAxisAlignment.start,
+                                          mainAxisAlignment:
+                                              MainAxisAlignment.start,
+                                          children: [
+                                            TextButton(
+                                                onPressed: () {},
+                                                child: Text(
+                                                  'Update Photo',
+                                                  style: TextStyle(
+                                                      color: Colors.blueGrey,
+                                                      fontWeight:
+                                                          FontWeight.bold,
+                                                      fontSize:
+                                                          size.height * 0.02),
+                                                )),
+                                            Container(
+                                              width: 70,
+                                              height: 100,
+                                              color: Colors.blueGrey,
+                                            ),
+                                            TextButton(
+                                                onPressed: () {},
+                                                child: Text(
+                                                  'Change Password',
+                                                  style: TextStyle(
+                                                      color: Colors.blueGrey,
+                                                      fontWeight:
+                                                          FontWeight.bold,
+                                                      fontSize:
+                                                          size.height * 0.02),
+                                                )),
+                                          ],
+                                        ),
+                                      )
+                                    ],
+                                  ),
+                                  //
+                                  const CustomTableView()
+                                ],
+                              ),
+                            ),
                           ),
                         )
                       ],
