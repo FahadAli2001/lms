@@ -1,0 +1,10 @@
+^C:\USERS\HP\STUDIOPROJECTS\LMS\BUILD\WINDOWS\CMAKEFILES\0E74CE44587BE090678A566968E449AA\GENERATE.STAMP.RULE
+setlocal
+"C:\Program Files (x86)\Microsoft Visual Studio\2019\Community\Common7\IDE\CommonExtensions\Microsoft\CMake\CMake\bin\cmake.exe" -SC:/Users/hp/StudioProjects/lms/windows -BC:/Users/hp/StudioProjects/lms/build/windows --check-stamp-list CMakeFiles/generate.stamp.list --vs-solution-file C:/Users/hp/StudioProjects/lms/build/windows/lms.sln
+if %errorlevel% neq 0 goto :cmEnd
+:cmEnd
+endlocal & call :cmErrorLevel %errorlevel% & goto :cmDone
+:cmErrorLevel
+exit /b %1
+:cmDone
+if %errorlevel% neq 0 goto :VCEnd

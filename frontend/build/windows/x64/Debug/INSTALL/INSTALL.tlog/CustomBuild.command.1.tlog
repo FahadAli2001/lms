@@ -1,0 +1,10 @@
+^C:\USERS\HP\STUDIOPROJECTS\LMS\BUILD\WINDOWS\CMAKEFILES\0E74CE44587BE090678A566968E449AA\INSTALL_FORCE.RULE
+setlocal
+cd .
+if %errorlevel% neq 0 goto :cmEnd
+:cmEnd
+endlocal & call :cmErrorLevel %errorlevel% & goto :cmDone
+:cmErrorLevel
+exit /b %1
+:cmDone
+if %errorlevel% neq 0 goto :VCEnd
