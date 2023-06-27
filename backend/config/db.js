@@ -1,23 +1,23 @@
-const mongoose = require("mongoose");
+const mongoose = require('mongoose');
 
- mongoose.connect('mongodb://0.0.0.0:27017/lms', { useNewUrlParser: true, useUnifiedTopology: true });
+mongoose.connect('mongodb://0.0.0.0:27017/lms', { useNewUrlParser: true, useUnifiedTopology: true });
 
-const dbConnection= mongoose.connection;
 
-dbConnection.on('open',()=>{
-    console.log(
-        'database connected'
-    );
-});
+const db = mongoose.connection;
 
-dbConnection.on('error',(err)=>{
+function DatabaseConnection(){
+    db.on('open', () => {
+        console.log('MongoDB connected successfully');
+    });
+    
+    db.on('error', (err) => {
+        console.log('MongoDB connection error:', err);
+    });
+    
+    db.on('disconnected', () => {
+        console.log('MongoDB disconnected');
+    });
+    
+}
 
-    console.log(' database error' + err);
-
-});
-
-dbConnection.on('disconnected',()=>{
-    console.log('database connection disconnected');
-});
-
-module.exports = dbConnection;
+module.exports = DatabaseConnection;
