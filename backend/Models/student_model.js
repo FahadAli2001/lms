@@ -2,7 +2,7 @@ const mongoose = require('mongoose');
 
 
 const StudentSchema = mongoose.Schema({
-    _id:mongoose.Types.ObjectId,
+    _id:mongoose.Schema.Types.ObjectId,
     student_no : String,
     password:String,
     student_name:String,
