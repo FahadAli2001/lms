@@ -18,9 +18,17 @@ const storage = multer.diskStorage({
   
   const upload = multer({ storage: storage });
 
-router.put('/addstudent',upload.single('image'),(req,res)=>{
+router.post('/addstudent',upload.single('image'),(req,res)=>{
     const studentSchema = new StudentSchema({
         _id:mongoose.Types.ObjectId,
+        student_no:req.body.student_no,
+        password:req.body.password,
+        student_name:req.body.student_name,
+        father_name:req.body.father_name,
+        guardian:req.body.guardian,
+        gender:req.body.gender,
+        dob:req.body.dob,
+        
     })
 });
 
