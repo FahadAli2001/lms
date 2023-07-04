@@ -28,7 +28,8 @@ router.post('/addstudent',upload.single('image'),(req,res)=>{
         guardian:req.body.guardian,
         gender:req.body.gender,
         dob:req.body.dob,
-        
+        nic_no:req.body.nic_no,
+        email:req.body.email
     })
 });
 
