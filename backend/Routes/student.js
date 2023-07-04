@@ -29,8 +29,27 @@ router.post('/addstudent',upload.single('image'),(req,res)=>{
         gender:req.body.gender,
         dob:req.body.dob,
         nic_no:req.body.nic_no,
-        email:req.body.email
+        email:req.body.email,
+        mobile:req.body.mobile,
+        residence:req.body.residence,
+        phone_residence:req.body.phone_residence,
+        city:req.body.city,
+        country:req.body.country,
+        post_code:req.body.post_code,
+        image:{
+          data:req.file.filename,
+          contentType:file.path
+        }
+    });
+
+    studentSchema.save()
+    .then((result)=>{
+      res.status(200).send(result);
     })
+
+    .catch((err)=>{
+      res.status(500).send(err);
+    });
 });
 
 
