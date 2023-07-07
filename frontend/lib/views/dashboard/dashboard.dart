@@ -1,9 +1,9 @@
-import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:lms/commans/dashboard/custom_menu_column.dart';
 import 'package:lms/controllers/dashboard/dashboard_controller.dart';
 import 'package:provider/provider.dart';
 
+import '../../commans/dashboard/custom_appbar.dart';
 import '../../commans/dashboard/custom_info_view.dart';
 
 import '../../commans/dashboard/custom_option_buttons_column.dart';
@@ -27,33 +27,8 @@ class _DashboardState extends State<Dashboard> {
       builder: (context, value, child) {
         return Scaffold(
           backgroundColor: Colors.white70,
-          appBar: AppBar(
-            elevation: 0,
-            title: const Text('Learning Management System'),
-            actions: [
-              Padding(
-                padding: EdgeInsets.symmetric(horizontal: appbarIconsPadding),
-                child: const Icon(Icons.search),
-              ),
-              Padding(
-                padding: EdgeInsets.symmetric(horizontal: appbarIconsPadding),
-                child: const Icon(CupertinoIcons.bell),
-              ),
-              Padding(
-                padding: EdgeInsets.symmetric(horizontal: appbarIconsPadding),
-                child: const Icon(Icons.message),
-              ),
-              Padding(
-                padding: EdgeInsets.symmetric(horizontal: appbarIconsPadding),
-                child: const Icon(CupertinoIcons.person),
-              )
-            ],
-            leading: GestureDetector(
-              onTap: () {
-                value.handleMenuState();
-              },
-              child: const Icon(Icons.menu),
-            ),
+          appBar: CustomAppBar(
+            handlestate: value.handleMenuState,
           ),
           body: Row(
             children: [

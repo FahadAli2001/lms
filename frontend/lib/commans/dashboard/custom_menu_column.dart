@@ -1,5 +1,6 @@
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
+import 'package:lms/views/dashboard/dashboard.dart';
 
 class CustomMenuColumn extends StatelessWidget {
   final bool menuOpen;
@@ -19,24 +20,30 @@ class CustomMenuColumn extends StatelessWidget {
           const SizedBox(
             height: 20,
           ),
-          Row(
-            children: [
-              Padding(
-                padding: EdgeInsets.symmetric(
-                    horizontal: padding, vertical: padding),
-                child: const Icon(
-                  Icons.space_dashboard,
-                  color: Colors.white,
+          GestureDetector(
+            onTap: () {
+              Navigator.push(context,
+                  MaterialPageRoute(builder: (context) => const Dashboard()));
+            },
+            child: Row(
+              children: [
+                Padding(
+                  padding: EdgeInsets.symmetric(
+                      horizontal: padding, vertical: padding),
+                  child: const Icon(
+                    Icons.space_dashboard,
+                    color: Colors.white,
+                  ),
                 ),
-              ),
-              (menuOpen == true)
-                  ? const Text(
-                      'Dashboard',
-                      style: TextStyle(
-                          fontWeight: FontWeight.bold, color: Colors.white),
-                    )
-                  : const SizedBox()
-            ],
+                (menuOpen == true)
+                    ? const Text(
+                        'Dashboard',
+                        style: TextStyle(
+                            fontWeight: FontWeight.bold, color: Colors.white),
+                      )
+                    : const SizedBox()
+              ],
+            ),
           ),
           Row(
             children: [

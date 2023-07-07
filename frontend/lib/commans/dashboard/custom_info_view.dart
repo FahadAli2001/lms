@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:lms/views/updatePersonalInfo/verify_password_screen.dart';
 
 class CustomInfoView extends StatelessWidget {
   const CustomInfoView({super.key});
@@ -27,7 +28,12 @@ class CustomInfoView extends StatelessWidget {
                   TextStyle(fontSize: size.height * 0.02, color: Colors.black),
             ),
             TextButton(
-                onPressed: () {},
+                onPressed: () {
+                  Navigator.push(
+                      context,
+                      MaterialPageRoute(
+                          builder: (context) => const VerifyPasswordScreen()));
+                },
                 child: Text(
                   'Update Perssonal Information',
                   style: TextStyle(
