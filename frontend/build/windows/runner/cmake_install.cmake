@@ -1,4 +1,4 @@
-# Install script for directory: C:/Users/hp/StudioProjects/lms/windows/runner
+# Install script for directory: C:/Users/hp/StudioProjects/lms/frontend/windows/runner
 
 # Set the install prefix
 if(NOT DEFINED CMAKE_INSTALL_PREFIX)

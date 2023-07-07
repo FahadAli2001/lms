@@ -17,7 +17,7 @@ class CustomLoginText extends StatelessWidget {
     double height = MediaQuery.of(context).size.height;
 
     return Padding(
-      padding: const EdgeInsets.only(top: 30),
+      padding: const EdgeInsets.only(top: 15),
       child: Align(
         alignment: Alignment.centerLeft,
         child: GestureDetector(

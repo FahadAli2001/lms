@@ -2,10 +2,10 @@
 <Project>
   <ProjectOutputs>
     <ProjectOutput>
-      <FullPath>C:\Users\hp\StudioProjects\lms\build\windows\x64\Debug\ZERO_CHECK</FullPath>
+      <FullPath>C:\Users\hp\StudioProjects\lms\frontend\build\windows\x64\Debug\ZERO_CHECK</FullPath>
     </ProjectOutput>
     <ProjectOutput>
-      <FullPath>C:\Users\hp\StudioProjects\lms\build\windows\flutter\x64\Debug\flutter_assemble</FullPath>
+      <FullPath>C:\Users\hp\StudioProjects\lms\frontend\build\windows\flutter\x64\Debug\flutter_assemble</FullPath>
     </ProjectOutput>
   </ProjectOutputs>
   <ContentFiles />
