@@ -83,9 +83,8 @@ class _VerifyPasswordScreenState extends State<VerifyPasswordScreen> {
                                         color: Colors.grey.shade700,
                                         fontSize: size.height * 0.03),
                                   ),
-                                  Padding(
-                                    padding: const EdgeInsets.symmetric(
-                                        vertical: 20),
+                                  const Padding(
+                                    padding: EdgeInsets.symmetric(vertical: 20),
                                     child: Text(
                                       'Username               12488',
                                       style: TextStyle(),
