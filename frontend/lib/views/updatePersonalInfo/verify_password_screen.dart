@@ -3,10 +3,12 @@ import 'package:flutter/material.dart';
 import 'package:lms/commans/custom_textfiled.dart';
 import 'package:lms/commans/dashboard/custom_menu_column.dart';
 import 'package:lms/controllers/dashboard/dashboard_controller.dart';
+import 'package:lms/views/updatePersonalInfo/personal_info_screen.dart';
 import 'package:provider/provider.dart';
 
 import '../../commans/dashboard/custom_appbar.dart';
 import '../../commans/dashboard/custom_top_box.dart';
+import '../../consts/app_colors.dart';
 
 class VerifyPasswordScreen extends StatefulWidget {
   const VerifyPasswordScreen({super.key});
@@ -22,6 +24,7 @@ class _VerifyPasswordScreenState extends State<VerifyPasswordScreen> {
     return Consumer<DashboardController>(
       builder: (context, value, child) {
         return Scaffold(
+          backgroundColor: bgColor,
           appBar: CustomAppBar(
             handlestate: value.handleMenuState,
           ),
@@ -124,7 +127,13 @@ class _VerifyPasswordScreenState extends State<VerifyPasswordScreen> {
                                     padding: EdgeInsets.only(
                                         top: 8, left: size.height * 0.225),
                                     child: GestureDetector(
-                                      onTap: () {},
+                                      onTap: () {
+                                        Navigator.push(
+                                            context,
+                                            MaterialPageRoute(
+                                                builder: (context) =>
+                                                    const PersonalInfoScreen()));
+                                      },
                                       child: Container(
                                         width: 200,
                                         height: 30,

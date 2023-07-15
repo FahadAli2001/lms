@@ -2,6 +2,8 @@ import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:lms/views/dashboard/dashboard.dart';
 
+import '../../consts/app_colors.dart';
+
 class CustomMenuColumn extends StatelessWidget {
   final bool menuOpen;
   final double padding;
@@ -13,7 +15,7 @@ class CustomMenuColumn extends StatelessWidget {
     return Container(
       width: (menuOpen == true) ? 200 : 60,
       height: MediaQuery.of(context).size.height,
-      color: Colors.blueGrey,
+      color: appbarColor,
       child: Column(
         // crossAxisAlignment: CrossAxisAlignment.start,
         children: [

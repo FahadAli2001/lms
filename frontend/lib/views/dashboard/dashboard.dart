@@ -9,6 +9,7 @@ import '../../commans/dashboard/custom_info_view.dart';
 import '../../commans/dashboard/custom_option_buttons_column.dart';
 import '../../commans/dashboard/custom_table_view.dart';
 import '../../commans/dashboard/custom_top_container.dart';
+import '../../consts/app_colors.dart';
 
 class Dashboard extends StatefulWidget {
   const Dashboard({super.key});
@@ -26,7 +27,7 @@ class _DashboardState extends State<Dashboard> {
     return Consumer<DashboardController>(
       builder: (context, value, child) {
         return Scaffold(
-          backgroundColor: Colors.white70,
+          backgroundColor: bgColor,
           appBar: CustomAppBar(
             handlestate: value.handleMenuState,
           ),

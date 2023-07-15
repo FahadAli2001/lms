@@ -24,8 +24,8 @@ class MyApp extends StatelessWidget {
         debugShowCheckedModeBanner: false,
         title: 'Lms',
         theme: ThemeData(
-          primarySwatch: Colors.blueGrey,
-        ),
+            //primarySwatch: Colors.white10,
+            ),
         home: const HomePage(),
       ),
     );

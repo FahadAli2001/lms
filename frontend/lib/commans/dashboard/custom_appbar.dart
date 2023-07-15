@@ -1,6 +1,8 @@
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 
+import '../../consts/app_colors.dart';
+
 class CustomAppBar extends StatelessWidget implements PreferredSizeWidget {
   final VoidCallback handlestate;
   const CustomAppBar({Key? key, required this.handlestate}) : super(key: key);
@@ -10,6 +12,7 @@ class CustomAppBar extends StatelessWidget implements PreferredSizeWidget {
   @override
   Widget build(BuildContext context) {
     return AppBar(
+      backgroundColor: appbarColor,
       elevation: 0,
       title: const Text('Learning Management System'),
       actions: [
