@@ -1,4 +1,6 @@
+import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
+import 'package:lms/commans/custom_textfiled.dart';
 import 'package:lms/commans/dashboard/custom_menu_column.dart';
 import 'package:lms/controllers/dashboard/dashboard_controller.dart';
 import 'package:provider/provider.dart';
@@ -83,13 +85,87 @@ class _VerifyPasswordScreenState extends State<VerifyPasswordScreen> {
                                         color: Colors.grey.shade700,
                                         fontSize: size.height * 0.03),
                                   ),
-                                  const Padding(
-                                    padding: EdgeInsets.symmetric(vertical: 20),
+                                  Padding(
+                                    padding: const EdgeInsets.symmetric(
+                                        vertical: 20),
                                     child: Text(
                                       'Username               12488',
-                                      style: TextStyle(),
+                                      style: TextStyle(
+                                          fontWeight: FontWeight.bold,
+                                          color: Colors.grey,
+                                          fontSize: size.height * 0.025),
                                     ),
-                                  )
+                                  ),
+                                  Row(
+                                    children: [
+                                      Text(
+                                        'Password',
+                                        style: TextStyle(
+                                            fontWeight: FontWeight.bold,
+                                            color: Colors.grey,
+                                            fontSize: size.height * 0.025),
+                                      ),
+                                      SizedBox(
+                                        width: size.width * 0.06,
+                                      ),
+                                      SizedBox(
+                                        width: 200,
+                                        height: 30,
+                                        child: CustomTextField(
+                                            hintText: '',
+                                            icon: const Icon(
+                                              Icons.lock,
+                                              color: Colors.white,
+                                            )),
+                                      )
+                                    ],
+                                  ),
+                                  Padding(
+                                    padding: EdgeInsets.only(
+                                        top: 8, left: size.height * 0.225),
+                                    child: GestureDetector(
+                                      onTap: () {},
+                                      child: Container(
+                                        width: 200,
+                                        height: 30,
+                                        decoration: BoxDecoration(
+                                            color: Colors.grey.shade200,
+                                            border: Border.all(
+                                                color: Colors.grey.shade700)),
+                                        child: Center(
+                                          child: Text(
+                                            'Verify Password & Proceed',
+                                            style: TextStyle(
+                                                //fontWeight: FontWeight.bold,
+                                                color: Colors.grey.shade700),
+                                          ),
+                                        ),
+                                      ),
+                                    ),
+                                  ),
+                                  Padding(
+                                    padding: EdgeInsets.only(
+                                        top: 8, left: size.height * 0.225),
+                                    child: GestureDetector(
+                                      onTap: () {},
+                                      child: Container(
+                                        width: 100,
+                                        height: 30,
+                                        decoration: BoxDecoration(
+                                            color: Colors.grey.shade200,
+                                            border: Border.all(
+                                                color: Colors.grey.shade700)),
+                                        child: Center(
+                                          child: Text(
+                                            'Cancel',
+                                            style: TextStyle(
+                                                //fontWeight: FontWeight.bold,
+                                                color: Colors.grey.shade700),
+                                          ),
+                                        ),
+                                      ),
+                                    ),
+                                  ),
                                 ],
                               ),
                             ),
